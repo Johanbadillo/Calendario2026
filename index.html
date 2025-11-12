@@ -1,31 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Metas 2026</title>
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
+
 <body>
 
   <h1>Metas para una Gran Vida en 2026</h1>
+  <!-- GIFs decorativos -->
+  <img src="https://media1.tenor.com/m/xKJ0blGgIlQAAAAd/dance-happy.gif" class="deco-gif mario" alt="Mario">
+  <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3VwdDR4bHBqbDZld3M0d2dlNW02bjhpcTM3d3dmYW9qb2Z2MjdhOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eSwGh3YK54JKU/giphy.gif" class="deco-gif sonic" alt="pokemon">
+  <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGNqZ3Q2ZTF3cHd3YXFwcm51dDAxdWFxbzY5Y2FpMnhoZGIzMjQyNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/oiGbiEHlDCTxP46cX3/giphy.gif" class="deco-gif coin" alt="Sonic">
 
-  <div id="meta-principal-container"></div>
+  <div id="meta-principal-container" style="cursor: pointer;"></div>
 
   <div id="metas-lista" class="metas-lista"></div>
 
   <button class="btn-agregar" id="btn-agregar">+</button>
 
-  <!-- Popup para nueva meta -->
-  <div class="overlay" id="overlay">
+  <!-- Popup: Añadir Nueva Meta -->
+  <div class="overlay" id="overlay-nueva">
     <div class="popup">
-      <h2>Añadir Nueva Meta</h2>
-      <input type="text" id="nueva-nombre" placeholder="Nombre de la meta" />
-      <input type="number" id="nueva-cantidad" placeholder="Cantidad final (ej: 5000)" />
-      <input type="number" id="nueva-ahorrado" placeholder="Ahorrado actual (ej: 0)" value="0" />
-      <button id="guardar-meta">Guardar Meta</button>
-      <button class="cerrar" id="cancelar-meta">Cancelar</button>
+      <h2>Crear Nueva Meta</h2>
+      <label>Nombre de la meta</label>
+      <input type="text" id="nueva-nombre" placeholder="Ej: Viaje a París" />
+
+      <label>Cantidad que deseas ahorrar</label>
+      <input type="number" id="nueva-cantidad" placeholder="Ej: 5000" />
+
+      <label>Cantidad inicial del ahorro</label>
+      <input type="number" id="nueva-ahorrado" placeholder="Ej: 200" value="0" />
+
+      <button class="btn-primario" id="guardar-meta">Guardar Meta</button>
+      <button class="btn-secundario" id="cancelar-meta">Cancelar</button>
     </div>
   </div>
+
+  <!-- Popup: Añadir Ahorro Mensual -->
+  <div class="overlay" id="overlay-ahorro">
+    <div class="popup popup-pequeno">
+      <h2 id="titulo-ahorro">Añadir Ahorro</h2>
+      <p>¿Cuánto ahorraste este mes?</p>
+      <input type="number" id="monto-ahorro" placeholder="0" />
+      <button class="btn-primario" id="confirmar-ahorro">Sumar al Ahorro</button>
+      <button class="btn-secundario" id="cancelar-ahorro">Cancelar</button>
+    </div>
+  </div>
+  <audio id="sonido-moneda" preload="auto">
+    <source src="./recorsus/spinning-coin-on-table-352448.mp3" type="audio/ogg">
+  </audio>
+
 </body>
-  
+<script src="./scripts/script.js"></script>
+
 </html>
